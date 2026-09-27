@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#fff; font-family:'Pretendard', sans-serif; -webkit-font-smoothing:antialiased; }
+  /* 모바일(상세폭 약 390px) 에서 기존 텍스트와 같은 크기로 보이도록 848px 기준 2.174배 */
+  #deadline { width:848px; padding:10px 0; background:#fff; text-align:center; }
+  .a { color:#FF0010; font-weight:700; font-size:41.3px; line-height:1.8; }
+  .b { color:#000;    font-weight:700; font-size:28.3px; line-height:1.8; }
+</style>
+</head>
+<body>
+  <div id="deadline">
+    <div class="a" id="line1">계산 중...</div>
+    <div class="a">프로모션 종료 및</div>
+    <div class="a">예약 구매만 가능합니다.</div>
+    <div class="b">(예약구매 수량 재입고까지 2주 이상 소요)</div>
+  </div>
+  <script>
+    var t = new Date();
+    document.getElementById('line1').textContent = (t.getMonth() + 1) + '월 ' + t.getDate() + '일 23:59 이후로는';
+  </script>
+</body>
+</html>
