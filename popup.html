@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{overflow:hidden;background:#151011}
+  #wrap{position:relative;width:100%;line-height:0}
+  #bg{display:block;width:100%;height:auto}
+  #line{position:absolute;left:0;top:46%;width:100%;text-align:center;white-space:nowrap;
+        font-family:'Pretendard',sans-serif;font-size:3.775vw;line-height:1;-webkit-font-smoothing:antialiased}
+  .g{color:#CE9459;font-weight:700}
+  .w{color:#C6C1C0;font-weight:600}
+</style></head><body>
+<div id="wrap">
+  <img id="bg" src="popup-base.jpg" alt="">
+  <div id="line"><span class="g" id="d">9월 30일</span><span class="w">부로 가격이 </span><span class="g">20% 인상</span><span class="w">됩니다.</span></div>
+</div>
+<script>
+  // 한국시간(UTC+9) 기준, 낮 12시에 하루 넘김 => 표시 날짜 = (지금 + 12시간)의 날짜
+  var nowKst = new Date(Date.now() + 9*3600*1000);
+  var shown  = new Date(nowKst.getTime() + 12*3600*1000);
+  var m = shown.getUTCMonth() + 1, d = shown.getUTCDate();
+  document.getElementById('d').textContent = m + '월 ' + d + '일';
+</script>
+</body></html>
