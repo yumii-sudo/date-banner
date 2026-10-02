@@ -8,10 +8,12 @@
 </style></head><body>
 <div id="t">계산 중...</div>
 <script>
-  // 한국시간 기준. 0~11시 -> 당일 11:59 / 12~23시 -> 당일 23:59
+  // 한국시간 기준 3시간 블록. 현재 블록의 마지막 시각을 표시한다.
+  // 00:00~02:59 -> 02:59 / 03:00~05:59 -> 05:59 / ... / 21:00~23:59 -> 23:59
   var k = new Date(Date.now() + 9*3600*1000);
   var m = k.getUTCMonth()+1, d = k.getUTCDate(), h = k.getUTCHours();
-  var t = (h < 12) ? '11:59' : '23:59';
-  document.getElementById('t').textContent = m + '월 ' + d + '일 ' + t + ' 이후로는';
+  var endH = Math.floor(h/3)*3 + 2;
+  var hh = (endH < 10 ? '0' : '') + endH;
+  document.getElementById('t').textContent = m + '월 ' + d + '일 ' + hh + ':59 이후로는';
 </script>
 </body></html>
