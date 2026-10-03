@@ -16,9 +16,9 @@
   <div id="line"><span class="g" id="d">9월 30일</span><span class="w">부로 가격이 </span><span class="g">20% 인상</span><span class="w">됩니다.</span></div>
 </div>
 <script>
-  // 한국시간(UTC+9) 기준, 낮 12시에 하루 넘김 => 표시 날짜 = (지금 + 12시간)의 날짜
+  // 한국시간(UTC+9) 기준. 00:00~17:59 = 당일 날짜, 18:00~23:59 = 다음 날짜 => 표시 날짜 = (지금 + 6시간)의 날짜
   var nowKst = new Date(Date.now() + 9*3600*1000);
-  var shown  = new Date(nowKst.getTime() + 12*3600*1000);
+  var shown  = new Date(nowKst.getTime() + 6*3600*1000);
   var m = shown.getUTCMonth() + 1, d = shown.getUTCDate();
   document.getElementById('d').textContent = m + '월 ' + d + '일';
 </script>
