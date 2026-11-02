@@ -3,7 +3,8 @@ const path = require('path');
 
 const PAGES = [
   { file: 'banner.html',   selector: '#banner',   output: 'event-banner.png' },
-  { file: 'deadline.html', selector: '#deadline', output: 'deadline.png' }
+  { file: 'deadline.html', selector: '#deadline', output: 'deadline.png' },
+  { file: 'este.html', selector: '#banner', output: 'este-event.png' }
 ];
 
 (async () => {
